@@ -6,7 +6,10 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import managers.PageObjectManager;
 import org.slf4j.Logger;
+import utils.ConfigReader;
 import utils.Log;
+
+import java.io.IOException;
 
 public class LoginSteps {
     private final PageObjectManager pageObjectManager;
@@ -23,7 +26,7 @@ public class LoginSteps {
     }
 
     @When("user enters valid username {string} and password {string}")
-    public void user_enters_valid_username_and_password(String username, String password) {
+    public void user_enters_valid_username_and_password(String username, String password) throws IOException {
         logger.info("Logging in with username: {}", username);
 
         pageObjectManager.getLoginPage().enterUsername(username);
