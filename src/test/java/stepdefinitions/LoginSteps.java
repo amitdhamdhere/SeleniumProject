@@ -31,6 +31,8 @@ public class LoginSteps {
 
         // To store data
         scenarioContext.set(ScenarioContextKey.LOGGED_IN_USER, username);
+
+        System.out.println(ConfigReader.getValue("withCurrentYear"));
     }
 
     @When("user clicks on login button")
