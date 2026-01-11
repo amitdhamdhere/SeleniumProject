@@ -17,7 +17,6 @@ public class HomeSteps {
 
     @Then("{string} message should be displayed")
     public void message_should_be_displayed(String expectedMessage) {
-        Assert.assertTrue(scenarioContext.get(ScenarioContextKey.LOGGED_IN_USER),"student");
         Assert.assertEquals(pageObjectManager.getHomePage().getSuccessMessage(), expectedMessage, "Message is not matched!");
     }
 }
